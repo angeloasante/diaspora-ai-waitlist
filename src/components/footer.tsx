@@ -12,7 +12,7 @@ export default function Footer() {
             •
           </li>
           <li className="dark:text-muted-foreground dark:hover:text-foreground">
-            <Link href="https://github.com/angeloasante">
+            <Link href="https://github.com/angeloasante/diaspora-ai-waitlist.git">
               View on GitHub
             </Link>
           </li>

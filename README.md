@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Live Demo:</strong> <a href="https://diaspora.ai" target="_blank" rel="noopener noreferrer">diaspora.ai</a>
+  <strong>Live Demo:</strong> <a href="https://diasporaai.dev" target="_blank" rel="noopener noreferrer">diaspora.ai</a>
 </p>
 
 ## Deploy to Vercel
@@ -88,9 +88,9 @@ To run Diaspora AI on your local machine:
     First, fork this repository to your own GitHub account. Then, clone your fork:
 
     ```bash
-    git clone https://github.com/YOUR_USERNAME/waitly.git
+    git clone https://github.com/YOUR_USERNAME/diaspora-ai-waitlist.git
     # Replace YOUR_USERNAME with your GitHub username
-    cd waitly
+    cd diaspora-ai-waitlist
     ```
 
 2.  **Install Dependencies:**
@@ -104,43 +104,37 @@ To run Diaspora AI on your local machine:
     Create a `.env.local` file in the root of your project. You can copy `.env.example` and fill in the values you obtained from the prerequisite steps:
 
     ```env
-    # Upstash Redis
-    UPSTASH_REDIS_REST_URL=your_upstash_redis_rest_url
-    UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_rest_token
+    # Supabase Database
+    SUPABASE_URL=your_supabase_project_url
+    SUPABASE_ANON_KEY=your_supabase_anon_key
 
-    # Notion
-    NOTION_SECRET=your_notion_secret_key
-    NOTION_DB=your_notion_database_id
-
-    # Resend
+    # Resend Email Service
     RESEND_API_KEY=your_resend_api_key
-    RESEND_FROM_EMAIL=you@yourdomain.com # Email address to send from (must be verified in Resend)
-    # RESEND_REPLY_TO_EMAIL=reply@yourdomain.com # Optional: Email address for replies
+    RESEND_FROM_EMAIL=waitlist@diasporaai.com # Email address to send from (must be verified in Resend)
+    # RESEND_REPLY_TO_EMAIL=reply@diasporaai.com # Optional: Email address for replies
     ```
 
-4.  **Run the Development Server:**
+4.  **Set Up the Database:**
+    Run the SQL schema to create the necessary tables:
+
+    ```bash
+    # Copy the contents of diaspora-ai-schema.sql and run it in your Supabase SQL Editor
+    # Or use the Supabase CLI (if installed):
+    supabase db reset
+    ```
+
+5.  **Run the Development Server:**
 
     ```bash
     pnpm dev
     ```
 
-    Your application should now be running on `http://localhost:3000`.
+    Your Diaspora AI waitlist should now be running on `http://localhost:3000`.
 
-5.  **Run the Email Preview Server (Optional):**
-    If you're working on email templates, Resend allows local previewing of emails.
+6.  **Run the Email Preview Server (Optional):**
+    If you're working on email templates, you can preview them locally:
     ```bash
     pnpm email
     ```
-    This typically starts a server on `http://localhost:3001` (or as configured in `package.json`).
+    This starts the email preview server on `http://localhost:3001`.
 
-## License
-
-This template is open-source and available under the [MIT License](LICENSE.md). You are free to use, modify, and distribute it for personal or commercial projects.
-
-## Support & Contributions
-
-Encountered a bug, have a feature request, or need clarification? Please [open an issue](https://github.com/revokslab/Waitly/issues) on the original repository.
-
-For general questions or discussions, you can reach out to [Maintainers on X (formerly Twitter)](https://x.com/codedoesdev).
-
-Contributions are welcome! Please feel free to fork the repository, make your changes, and submit a pull request.
