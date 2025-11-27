@@ -20,6 +20,7 @@ export default function Demo({
 	const modalVideoRef = useRef<HTMLVideoElement>(null);
 
 	const handlePlayClick = () => {
+		console.log("Play button clicked, opening modal");
 		setIsModalOpen(true);
 	};
 
@@ -38,12 +39,15 @@ export default function Demo({
 		};
 	}, []);
 
-	// Play video when modal opens
+	// Handle video when modal opens
 	useEffect(() => {
 		if (isModalOpen && modalVideoRef.current) {
-			modalVideoRef.current.play();
+			console.log("Modal opened, video src:", videoSrc);
+			const video = modalVideoRef.current;
+			video.load();
+			console.log("Video element:", video);
 		}
-	}, [isModalOpen]);
+	}, [isModalOpen, videoSrc]);
 
 	return (
 		<div className="py-14 sm:px-0 px-4">
@@ -67,9 +71,11 @@ export default function Demo({
 						{/* Video thumbnail */}
 						<video
 							ref={videoRef}
+							src={videoSrc}
 							poster={thumbnailSrc}
 							className="w-full h-full object-cover"
 							muted
+							preload="metadata"
 							aria-describedby="video-description"
 						>
 							<track
@@ -187,14 +193,17 @@ export default function Demo({
 										controls
 										playsInline
 										muted
-										onEnded={() => setIsModalOpen(false)}
+										autoPlay
+										loop
+										onError={(e) => {
+											console.error("Video error:", e);
+											console.error("Video src:", videoSrc);
+										}}
+										onLoadStart={() => console.log("Video load start")}
+										onCanPlay={() => console.log("Video can play")}
+										onPlay={() => console.log("Video started playing")}
+										onPause={() => console.log("Video paused")}
 									>
-										<track
-											kind="captions"
-											label="No captions needed"
-											srcLang="en"
-											default
-										/>
 										Your browser does not support the video tag.
 									</video>
 								</div>
