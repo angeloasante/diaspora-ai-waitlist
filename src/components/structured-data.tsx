@@ -18,22 +18,24 @@ export default function StructuredData() {
 			"Diaspora AI is a global AI-powered travel assistant offering real-time flight search, booking via Duffel, visa guidance, and intelligent travel tools.",
 	};
 
-	const softwareAppLdJson = {
+	const webApplicationLdJson = {
 		"@context": "https://schema.org",
-		"@type": "SoftwareApplication",
-		name: "Diaspora AI Travel Assistant",
-		operatingSystem: "iOS, Android, Web",
+		"@type": "WebApplication",
+		name: "Diaspora AI Travel Platform",
 		applicationCategory: "TravelApplication",
+		operatingSystem: "Web Browser",
+		browserRequirements: "Requires JavaScript. Requires HTML5.",
 		offers: {
 			"@type": "Offer",
 			price: "0",
-			priceCurrency: "GBP",
+			priceCurrency: "USD",
 		},
 		creator: {
 			"@type": "Person",
 			name: "Travis Moore",
 		},
 		url: "https://diasporaai.dev",
+		description: "AI-powered web platform for intelligent flight booking and travel assistance",
 	};
 
 	const websiteLdJson = {
@@ -59,11 +61,11 @@ export default function StructuredData() {
 				{JSON.stringify(organizationLdJson)}
 			</Script>
 			<Script
-				id="software-app-schema"
+				id="web-app-schema"
 				type="application/ld+json"
 				strategy="beforeInteractive"
 			>
-				{JSON.stringify(softwareAppLdJson)}
+				{JSON.stringify(webApplicationLdJson)}
 			</Script>
 			<Script
 				id="website-schema"
