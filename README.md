@@ -1,61 +1,70 @@
-<h1>Diaspora AI - Intelligent Flight Booking Platform</h1>
+<h1>Diaspora AI - Global AI Travel Assistant & Waitlist</h1>
 
-![Diaspora AI](/src/app/opengraph-image.png)
+![Diaspora AI](https://diasporaai.dev/opengraph-image.png)
 
 <p>
-  The future of flight booking for the African diaspora and global travelers. Diaspora AI uses artificial intelligence to search, compare, and book flights instantly with real airline data, visa assistance, and seamless payment processing.
+  🌍 <strong>Diaspora AI</strong> is your intelligent travel companion that revolutionizes how you search, book, and manage flights globally. Built for travelers worldwide, with special focus on African diaspora travel needs.
 </p>
 
 <p>
-  <strong>Created by:</strong> <a href="https://travisdevelops.com" target="_blank" rel="noopener noreferrer">Travis Moore (travisdevelops.com)</a>
+  <strong>🚀 Live Waitlist:</strong> <a href="https://diasporaai.dev" target="_blank" rel="noopener noreferrer">diasporaai.dev</a>
 </p>
 
 <p>
-  <strong>Live Demo:</strong> <a href="https://diasporaai.dev" target="_blank" rel="noopener noreferrer">diaspora.ai</a>
+  <strong>👨‍💻 Created by:</strong> <a href="https://travisdevelops.com" target="_blank" rel="noopener noreferrer">Travis Moore</a> (Angelo Asante)
 </p>
 
-## Deploy to Vercel
+## 🎯 What is Diaspora AI?
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frevokslab%2Fwaitly&env=SUPABASE_URL,SUPABASE_ANON_KEY,RESEND_API_KEY,RESEND_FROM_EMAIL&envDescription=Environment%20variables%20needed%20for%20Diaspora%20AI%20waitlist.&project-name=diaspora-ai-waitlist&repository-name=diaspora-ai-waitlist&template=diaspora-ai)
+Diaspora AI combines artificial intelligence with real-time flight data to create the most intelligent travel booking experience. Whether you're planning a trip home, exploring new destinations, or managing complex multi-city journeys, Diaspora AI is your AI-powered travel assistant.</p>
 
-## Core Features
+## 🚀 Quick Deploy
 
-- **AI-Powered Flight Search**: Intelligent search using real airline data from Duffel API
-- **Instant Booking**: Search, compare, and book flights in real-time with live pricing
-- **Visa Assistant**: Integrated visa requirements and document guidance via Sherpa API
-- **Multi-Currency Support**: Pay in your local currency with Stripe and Paystack integration
-- **Check-in Automation**: Automated reminders with QR codes for seamless check-in
-- **Referral System**: Viral waitlist growth with unique referral tracking
-- **Real-time Updates**: Live flight status and booking confirmations
-- **Next.js 15 + Supabase**: Modern tech stack with PostgreSQL database and real-time capabilities
-- **TypeScript**: Full type safety for robust, maintainable code
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fangeloasante%2Fdiaspora-ai-waitlist&env=SUPABASE_URL,SUPABASE_ANON_KEY,RESEND_API_KEY,RESEND_FROM_EMAIL,ADMIN_EXPORT_KEY&envDescription=Environment%20variables%20needed%20for%20Diaspora%20AI%20waitlist%20and%20admin%20features.&project-name=diaspora-ai-waitlist&repository-name=diaspora-ai-waitlist)
 
-## About Diaspora AI
+## ✨ Key Features
 
-Diaspora AI is revolutionizing flight booking for the global African diaspora and international travelers. Built by Travis Moore, this platform combines artificial intelligence with real airline data to create the most seamless flight booking experience possible.
+### 🤖 AI-Powered Intelligence
+- **Smart Flight Search**: Advanced AI algorithms find the best routes and prices
+- **Price Refresh Technology**: Real-time price monitoring and alerts
+- **Intelligent Recommendations**: Personalized travel suggestions based on your preferences
 
-**What Makes Diaspora AI Special:**
+### 🌐 Global Travel Tools  
+- **Duffel API Integration**: Direct access to airline inventory and live pricing
+- **Visa Requirements Checker**: Automated visa guidance for any destination
+- **Multi-Currency Support**: Pay in your local currency worldwide
+- **Travel Document Assistant**: AI-powered document preparation help
 
-- **Real Airline Integration**: Direct connection to airline systems via Duffel API for accurate, live pricing
-- **Smart Automation**: AI-powered search that learns your preferences and finds the best deals
-- **Diaspora-Focused**: Specialized routes and partnerships for African diaspora travel needs
-- **End-to-End Service**: From search to check-in, everything is automated and intelligent
-- **Multi-Payment Support**: Local payment methods including African mobile money and cards
-- **Visa Intelligence**: Built-in visa requirements and application guidance for any destination
+### 🚀 Modern Technology Stack
+- **Next.js 15**: Latest React framework with App Router
+- **Supabase**: Real-time PostgreSQL database with instant APIs
+- **TypeScript**: Full type safety for reliable, maintainable code
+- **Tailwind CSS**: Modern, responsive design system
+- **Resend**: Professional email delivery system
+
+## 🎯 Why Diaspora AI?
+
+**Built for Global Travelers, Inspired by Diaspora Needs**
+
+Diaspora AI was created by Travis Moore (Angelo Asante) to solve real travel challenges faced by diaspora communities and global travelers. Our AI-powered platform eliminates the frustration of complex flight searches, visa confusion, and booking complications.
+
+### 🌟 What Sets Us Apart:
+
+- **🧠 Intelligent by Design**: Our AI learns your travel patterns and preferences
+- **🌍 Diaspora-Focused**: Specialized for complex international travel needs  
+- **⚡ Real-Time Everything**: Live pricing, instant booking, real-time updates
+- **🔒 Secure & Reliable**: Enterprise-grade security with transparent pricing
+- **📱 Mobile-First**: Seamless experience across all devices
+- **🎯 Personal Touch**: AI that understands your unique travel requirements
+
+### 🚀 The Vision
+We're building more than a booking platform — we're creating an intelligent travel ecosystem that makes global travel as simple as booking a local ride.
 
 ## Prerequisites: Setting Up External Services
 
 Before you can run Diaspora AI locally, you'll need to configure these services:
 
 ### 1. Resend (Email Service)
-
-Upstash provides serverless Redis. This template uses it for rate limiting signups.
-
-1.  Sign up for a free account at [Upstash](https://upstash.com/).
-2.  Create a new Redis database.
-3.  From the database details page, note down the `REST API -> Endpoint` (this is your `UPSTASH_REDIS_REST_URL`) and `REST API -> Read-only Token` or a custom token with write access (this is your `UPSTASH_REDIS_REST_TOKEN`). Ensure the token has write permissions if you're using it for operations that modify data.
-
-### 2. Resend
 
 Resend is used for sending transactional emails (e.g., signup confirmations).
 
@@ -64,7 +73,7 @@ Resend is used for sending transactional emails (e.g., signup confirmations).
 3.  Generate an API key from the "API Keys" section. This will be your `RESEND_API_KEY`.
 4.  Note the email address you'll send from (e.g., `waitlist@yourdomain.com`). This will be your `RESEND_FROM_EMAIL`.
 
-### 3. Supabase
+### 2. Supabase
 
 Your waitlist data will be stored in a Supabase PostgreSQL database.
 
